@@ -9,8 +9,15 @@ void main() {
     expect(manuel.imc, 13.29);
   });
 
-  test('Se a idade for maior que 18, então isOlder deve ser true', () {
-    final person = Person(name: 'name', age: 18, height: 1.80, weight: 75);
-    expect(person.isOlder, true);
+  group('isOlder | ', () {
+    test('Se a idade for maior que 18, então isOlder deve ser true', () {
+      final person = Person(name: 'name', age: 29, height: 1.80, weight: 75);
+      expect(person.isOlder, true);
+    });
+
+    test('Se a idade for igual a 18, então, isOlder deve ser true', () {
+      final person = Person(name: 'name', age: 18, height: 1.80, weight: 75);
+      expect(person.isOlder, true);
+    });
   });
 }
